@@ -55,8 +55,11 @@ fi
 if [ ! -d "$APP_PATH" ]; then
 	echo "clono el repositorio"
 	cd $APACHE_ROOT
-	sudo git clone https://github.com/utngrupo8/unidad2_web.git
+	sudo git clone https://github.com/Fichen/utn-devops-app.git
 fi
+
+cd $APP_PATH
+sudo git checkout unidad-2
 
 
 ######## Instalacion de DOCKER ########
@@ -87,5 +90,5 @@ if [ ! -x "$(command -v docker)" ]; then
 	sudo systemctl enable docker
 fi
 
- 
-
+cd /vagrant/docker/
+sudo docker-compose up -d
