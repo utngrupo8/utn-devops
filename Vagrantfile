@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
   #config.vm.network "forwarded_port", guest: 80, host: 8080
   #forwarding del puerto 80 al 8080 del host
 
-  config.vm.network "forwarded_port", guest: 8080, host: 8082, auto_correct: true #port Jenkings
+  config.vm.network "forwarded_port", guest: 8082, host: 8082, auto_correct: true #port Jenkings
   config.vm.network "forwarded_port", guest: 8140, host: 8140, auto_correct: true #port Puppet
   config.vm.box_download_insecure = true
      
