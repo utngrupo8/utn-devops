@@ -16,7 +16,10 @@ include 'jenkins'
 # Instalación de Jenkins. Solo lo instalo si el nodo cliente contiene los
 # sistemas operativos Debian o Ubuntu
 case $::operatingsystem {
-        'Debian', 'Ubuntu' : { include jenkins }
+        'Debian', 'Ubuntu' : { 
+            include jenkins
+            include jenkins::dependencies
+         }
         default  : { notify {"$::operatingsystem no esta soportado":} }
     }
 
